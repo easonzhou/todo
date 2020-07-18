@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const app = express();
 
 app.use(express.json());
+app.use(express.static('public'))
 
 // Environment Variables (getting ready for Heroku)
 const PORT = process.env.PORT || 3000;
@@ -28,4 +29,4 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 app.listen(PORT, () => {
   console.log('Let\'s get things done on port', PORT);
-})
+});
